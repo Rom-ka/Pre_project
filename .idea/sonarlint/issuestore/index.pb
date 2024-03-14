@@ -17,3 +17,5 @@ h
 8src/main/java/jm/task/core/jdbc/dao/UserDaoJDBCImpl.java,8\c\8ca9d994c9918b797bc9ba8824095a0f0fe7cee0
 R
 "src/test/java/UserServiceTest.java,c\e\ce475d05bd26c61cb3fe8be2f39dbc4a98cc5ed5
+m
+=src/main/java/jm/task/core/jdbc/dao/UserDaoHibernateImpl.java,f\6\f61bc8cc983455b547d554cfd3bddb383ad8d3bd

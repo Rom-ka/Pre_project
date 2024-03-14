@@ -1,0 +1,24 @@
+
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(è¥‘àıÿÿÿÿ8¾×—¤ã1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(×¼­Æ8Æ×—¤ã1
+X
+java:S6437"6Revoke and change this password, as it is compromised.(Ó›ß†øÿÿÿÿ8Æ×—¤ã1
+L	java:S106"+Replace this use of System.out by a logger.(Àó“İüÿÿÿÿ8Æ×—¤ã1
+G	java:S106"+Replace this use of System.out by a logger.(ìñı8Æ×—¤ã1
+l
+java:S3252+"JUse static access with "org.hibernate.cfg.AvailableSettings" for "DRIVER".(ò¥‡íıÿÿÿÿ8Ş×—¤ã1
+i
+java:S3252,"GUse static access with "org.hibernate.cfg.AvailableSettings" for "URL".(ù¶ıÿÿÿÿ8Ş×—¤ã1
+e
+java:S3252-"HUse static access with "org.hibernate.cfg.AvailableSettings" for "USER".(è©šŒ8Ş×—¤ã1
+e
+java:S3252."HUse static access with "org.hibernate.cfg.AvailableSettings" for "PASS".(›Áìë8Ş×—¤ã1
+m
+java:S3252/"KUse static access with "org.hibernate.cfg.AvailableSettings" for "DIALECT".(á¶ Óıÿÿÿÿ8æ×—¤ã1
+i
+java:S32521"LUse static access with "org.hibernate.cfg.AvailableSettings" for "SHOW_SQL".(÷µ•–8æ×—¤ã1
+~
+java:S32522"aUse static access with "org.hibernate.cfg.AvailableSettings" for "CURRENT_SESSION_CONTEXT_CLASS".(ßÓÿ­8æ×—¤ã1
+r
+java:S32523"PUse static access with "org.hibernate.cfg.AvailableSettings" for "HBM2DDL_AUTO".(®ÇĞîıÿÿÿÿ8æ×—¤ã1

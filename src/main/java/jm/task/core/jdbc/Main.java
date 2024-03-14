@@ -6,6 +6,7 @@ import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 import jm.task.core.jdbc.util.Util;
+import org.hibernate.SessionFactory;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Connection connection=Util.getConnection();
+        SessionFactory factory=Util.getSessionFactory();
         UserService userService = new UserServiceImpl();
 
         userService.createUsersTable();
@@ -26,10 +27,10 @@ public class Main {
 
 
 
-        userService.removeUserById(1);
+       userService.removeUserById(1);
         userService.getAllUsers();
         userService.cleanUsersTable();
-        userService.dropUsersTable();
+       userService.dropUsersTable();
     }
     }
 
