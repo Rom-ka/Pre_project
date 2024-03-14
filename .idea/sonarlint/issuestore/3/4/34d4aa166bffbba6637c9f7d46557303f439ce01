@@ -1,15 +1,17 @@
 
-[
-java:S1854">Remove this useless assignment to local variable "connection".(ÎÙåÆ8§„âùâ1
-L
-java:S1481"/Remove this unused "connection" local variable.(ÎÙåÆ8§„âùâ1
+]
+java:S1854";Remove this useless assignment to local variable "factory".(¶Š·¶ùÿÿÿÿ8óğåã1
+N
+java:S1481",Remove this unused "factory" local variable.(¶Š·¶ùÿÿÿÿ8õğåã1
 \
-java:S1128":Remove this unused import 'jm.task.core.jdbc.dao.UserDao'.(½ÛÃøÿÿÿÿ8§„âùâ1
+java:S1128":Remove this unused import 'jm.task.core.jdbc.dao.UserDao'.(½ÛÃøÿÿÿÿ8ïŸûåã1
 d
-java:S1128"BRemove this unused import 'jm.task.core.jdbc.dao.UserDaoJDBCImpl'.(äšÉàøÿÿÿÿ8§„âùâ1
+java:S1128"BRemove this unused import 'jm.task.core.jdbc.dao.UserDaoJDBCImpl'.(äšÉàøÿÿÿÿ8ïŸûåã1
 [
-java:S1128"9Remove this unused import 'jm.task.core.jdbc.model.User'.(õ„­³úÿÿÿÿ8¯„âùâ1
-L
-java:S1128"/Remove this unused import 'java.sql.Statement'.(ÏÖÔø8¯„âùâ1
+java:S1128"9Remove this unused import 'jm.task.core.jdbc.model.User'.(õ„­³úÿÿÿÿ8ïŸûåã1
 M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¯„âùâ1
+java:S1128"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8ïŸûåã1
+L
+java:S1128"/Remove this unused import 'java.sql.Statement'.(ÏÖÔø8ïŸûåã1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ïŸûåã1
