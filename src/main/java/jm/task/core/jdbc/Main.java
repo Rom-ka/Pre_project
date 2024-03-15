@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Connection connection=Util.getConnection();
+        Connection connection = Util.getConnection();
         UserService userService = new UserServiceImpl();
 
         userService.createUsersTable();
@@ -25,11 +25,10 @@ public class Main {
         userService.saveUser("Camila", "Larsan", (byte) 38);
 
 
-
         userService.removeUserById(1);
         userService.getAllUsers();
         userService.cleanUsersTable();
         userService.dropUsersTable();
     }
-    }
+}
 
