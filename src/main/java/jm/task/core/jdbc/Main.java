@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-public class Main {
+public class  Main {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Connection connection = Util.getConnection();
         UserService userService = new UserServiceImpl();
