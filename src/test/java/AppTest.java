@@ -15,7 +15,7 @@ public  class AppTest {
     private ApplicationContext applicationContext;
 
     @Test
-    public void  mainTest() {
+    public void mainTest() {
         HelloWorld tree =
                 applicationContext.getBean(HelloWorld.class);
         HelloWorld leaf =
