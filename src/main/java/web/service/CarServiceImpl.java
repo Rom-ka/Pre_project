@@ -20,13 +20,13 @@ public class CarServiceImpl implements CarService {
 
     public List<Car> showCars(int count) {
         if (count == 1) {
-            return listCar.subList(0, 1);
+            return listCar.subList(0, count);
         } else if (count == 2) {
-            return listCar.subList(0, 2);
+            return listCar.subList(0, count);
         } else if (count == 3) {
-            return listCar.subList(0, 3);
+            return listCar.subList(0, count);
         } else if (count == 4) {
-            return listCar.subList(0, 4);
+            return listCar.subList(0, count);
         } else {
             return listCar;
         }
