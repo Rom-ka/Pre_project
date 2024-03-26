@@ -18,25 +18,8 @@ public class CarController {
 
     @GetMapping
     public String getCars(ModelMap model, @RequestParam(value = "count", defaultValue = "5") int count) {
-        switch (count) {
-            case 1:
-                model.addAttribute("cars", carService.showCars().get(0));
-                break;
-            case 2:
-                model.addAttribute("cars", carService.showCars().subList(0, 2));
-                break;
-            case 3:
-                model.addAttribute("cars", carService.showCars().subList(0, 3));
-                break;
-            case 4:
-                model.addAttribute("cars", carService.showCars().subList(0, 4));
-                break;
-            default:
-                model.addAttribute("cars", carService.showCars());
-                break;
-        }
+        model.addAttribute("cars", carService.showCars(count));
         return "cars";
     }
-
 
 }

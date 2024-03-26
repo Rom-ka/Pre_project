@@ -18,8 +18,18 @@ public class CarServiceImpl implements CarService {
         listCar.add(new Car("Tesla_plaid", 2024, "red"));
     }
 
-    public List<Car> showCars() {
-        return listCar;
+    public List<Car> showCars(int count) {
+        if (count == 1) {
+            return listCar.subList(0, 1);
+        } else if (count == 2) {
+            return listCar.subList(0, 2);
+        } else if (count == 3) {
+            return listCar.subList(0, 3);
+        } else if (count == 4) {
+            return listCar.subList(0, 4);
+        } else {
+            return listCar;
+        }
     }
 
 }
