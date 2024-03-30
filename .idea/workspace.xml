@@ -9,23 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2c714f1-f6a7-4b5f-b870-b67878258513" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/config/DatabaseConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/controller/userController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/dao/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/WEB-INF/pages/listUsers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/config/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/config/AppInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/controller/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/pages/index.html" beforeDir="false" />
-    </list>
+    <list default="true" id="a2c714f1-f6a7-4b5f-b870-b67878258513" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
