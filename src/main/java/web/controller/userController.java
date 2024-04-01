@@ -1,20 +1,22 @@
 package web.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import web.models.User;
+import web.service.UserService;
 
 @Controller
 @RequestMapping("/users")
 public class userController {
+    @Autowired
+    UserService userService;
+
     @PostMapping
-    public String createUser(@RequestParam("name") String name,@RequestParam("email") String email,
-                            @RequestParam("age") int age){
-        User user=new User();
+    public String createUser(@RequestParam("name") String name, @RequestParam("email") String email,
+                             @RequestParam("age") int age) {
+        User user = new User();
         user.setName(name);
         user.setEmail(email);
         user.setAge(age);
@@ -23,19 +25,39 @@ public class userController {
     }
 
     @GetMapping
-    public String getListUsers(Model model){
+    public String getListUsers(Model model) {
+        model.addAttribute("users", userService.showListUser());
         return "listUsers";
     }
 
-    @GetMapping("/id")
-    public String show(@RequestParam(value = "id" , required = false) int id, Model model){
-        return null;
+    @GetMapping("/{id}")
+    public String show(@PathVariable("id") int id, Model model) {
+        model.addAttribute("user", userService.getUserById(id));
+        return "show";
     }
 
     @GetMapping("/new")
-    public String newUser(Model model){
-        model.addAttribute("user",new User());
+    public String newUser(@ModelAttribute("user") User user) {
         return "new";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String edit(@PathVariable("id") int id, Model model) {
+        model.addAttribute("user", userService.getUserById(id));
+        return "edit";
+
+    }
+
+    @PatchMapping("/{id}")
+    public String update(@ModelAttribute("user") User user, @RequestParam("id") int id) {
+        userService.updateUser(user, id);
+        return "redirect:/users";
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") int id) {
+        userService.removeUser(id);
+        return "redirect:/users";
     }
 
 }

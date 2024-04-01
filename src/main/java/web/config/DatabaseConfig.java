@@ -34,7 +34,7 @@ public class DatabaseConfig {
 
     @Bean
     public DataSource getDataSource() {
-        BasicDataSource ds=new BasicDataSource();
+        BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName(env.getRequiredProperty("db.driver"));
         ds.setUrl(env.getRequiredProperty("db.url"));
         ds.setUsername(env.getRequiredProperty("db.username"));
@@ -50,7 +50,7 @@ public class DatabaseConfig {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
-        LocalContainerEntityManagerFactoryBean em=new LocalContainerEntityManagerFactoryBean();
+        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(getDataSource());
         em.setPackagesToScan(env.getRequiredProperty("db.model_package"));
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
@@ -59,28 +59,26 @@ public class DatabaseConfig {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(){
-        JpaTransactionManager manager =new JpaTransactionManager();
+    public PlatformTransactionManager transactionManager() {
+        JpaTransactionManager manager = new JpaTransactionManager();
         manager.setEntityManagerFactory(entityManagerFactoryBean().getObject());
         return manager;
     }
 
 
-
     @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
     public Properties getHibernateProperties() {
-       try{
-        Properties properties=new Properties();
-        InputStream is=getClass().getClassLoader().getResourceAsStream("hibernate.properties");
-
+        try {
+            Properties properties = new Properties();
+            InputStream is = getClass().getClassLoader().getResourceAsStream("hibernate.properties");
             properties.load(is);
             return properties;
         } catch (IOException e) {
-            throw new IllegalArgumentException("Can't find properties file",e);
+            throw new IllegalArgumentException("Can't find properties file", e);
         }
     }
 

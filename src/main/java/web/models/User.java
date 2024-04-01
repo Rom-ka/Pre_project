@@ -3,20 +3,20 @@ package web.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
-    @Column(name="age")
+    @Column(name = "age")
     private int age;
-    @Column(name="email")
+    @Column(name = "email")
     private String email;
 
-    public User(){
+    public User() {
 
     }
 
@@ -61,12 +61,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", age=" + age +
                 ", email='" + email + '\'' +
                 '}';
     }
-
 }
 
