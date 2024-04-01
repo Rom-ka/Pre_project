@@ -9,7 +9,7 @@ import web.service.UserService;
 
 @Controller
 @RequestMapping("/users")
-public class userController {
+public class UserController {
     @Autowired
     UserService userService;
 
@@ -61,3 +61,4 @@ public class userController {
     }
 
 }
+

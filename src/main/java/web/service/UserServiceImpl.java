@@ -9,8 +9,6 @@ import web.models.User;
 import java.util.List;
 
 @Service
-@Transactional(readOnly = true)
-
 public class UserServiceImpl implements UserService {
     @Autowired
     UserDao userDapImpl;
