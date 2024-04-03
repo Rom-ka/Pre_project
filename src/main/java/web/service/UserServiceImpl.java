@@ -10,8 +10,12 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
+    final
     UserDao userDapImpl;
+    @Autowired
+    public UserServiceImpl(UserDao userDapImpl) {
+        this.userDapImpl = userDapImpl;
+    }
 
     @Override
     public List<User> showListUser() {
