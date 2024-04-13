@@ -18,16 +18,17 @@ import java.security.Principal;
 public class UserController {
 
     private final UserService userService;
+
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
     @GetMapping
-    public String showUser(Principal principal,Model model){
+    public String showUser(Principal principal, Model model) {
 
-        User user=userService.findByUsername(principal.getName());
-        model.addAttribute("user",user);
+        User user = userService.findByUsername(principal.getName());
+        model.addAttribute("user", user);
         return "user";
     }
 }

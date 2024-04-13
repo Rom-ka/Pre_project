@@ -14,6 +14,7 @@
             <th>Username</th>
             <th>Email</th>
             <th>Password</th>
+            <th>Role</th>
 
         </tr>
         </thead>
@@ -23,6 +24,7 @@
             <td th:text="${user.getUsername()}"/>
             <td th:text="${user.getEmail()}"/>
             <td th:text="${user.getPassword()}"/>
+            <td th:text="${user.getRole()}"/>
         </tr>
         </tbody>
 

@@ -13,13 +13,17 @@
     <input type="text" th:field="*{email}" id="email">
     <label for="password">Enter password:</label>
     <input type="password" th:field="*{password}" id="password">
-    <div> <label for="role">Role:</label>
-        <select id="role" th:field="*{roles}" name="role" multiple="multiple">
-            <option value="ROLE_ADMIN">ADMIN</option>
-            <option value="ROLE_USER">USER</option>
-            <option value="ROLE_ADMIN,ROLE_USER">ADMIN and USER</option>
-        </select>
-    </div>
+    <p>
+        <label>Roles:
+            <input type="checkbox" name="roles"
+                   th:each="role : ${roles}"
+                   th:text="${role.getName().replace('ROLE_', '') + ' '}"
+                   th:value="${role.getId()}"
+                   th:field="*{roles}"
+
+            />
+        </label>
+    </p>
     <p></p>
     <input type="submit" value="Update">
     <br>

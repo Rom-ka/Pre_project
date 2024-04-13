@@ -1,43 +1,41 @@
 package ru.kata.spring.boot_security.demo.controllers;
 
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import ru.kata.spring.boot_security.demo.models.User;
+import ru.kata.spring.boot_security.demo.services.RoleService;
 import ru.kata.spring.boot_security.demo.services.UserService;
-
 
 
 @Controller
 @RequestMapping("/registration")
 public class RegistrationController {
 
-    private  final UserService userService;
+    private final UserService userService;
+    private final RoleService roleService;
 
     @Autowired
-    public RegistrationController(UserService userService) {
+    public RegistrationController(UserService userService, RoleService roleService) {
         this.userService = userService;
+        this.roleService = roleService;
     }
 
+
     @GetMapping
-    public String newUser(@ModelAttribute("user") User user) {
+    public String createUser(Model model) {
+        model.addAttribute("user", new User());
+        model.addAttribute("roles", roleService.findAll());
         return "registration";
     }
 
+
     @PostMapping
-    public String registration(@ModelAttribute("user") @Valid User user
-            , BindingResult bindingResult){
-        if (bindingResult.hasErrors()){
-            return "registration";
-        }
-        if(userService.save(user)){
-            return "login";
-        }else {return "redirect:/registration";}
+    public String registration(@ModelAttribute("user") User user) {
+
+        userService.save(user);
+        return "redirect:/admin/listUsers";
+
     }
 }

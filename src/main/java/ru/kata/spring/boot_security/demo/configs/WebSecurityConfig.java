@@ -14,23 +14,25 @@ import ru.kata.spring.boot_security.demo.services.UserService;
 
 
 @EnableWebSecurity
-
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private  UserService userService;
+    private UserService userService;
+
     @Autowired
-    public void setUserService(UserService userService){
-        this.userService=userService;
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
-    private  SuccessUserHandler successUserHandler;
+    private SuccessUserHandler successUserHandler;
+
     @Autowired
     public WebSecurityConfig(SuccessUserHandler successUserHandler) {
         this.successUserHandler = successUserHandler;
 
     }
+
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -52,16 +54,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-
-
-
     @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider(){
-        DaoAuthenticationProvider authenticationProvider=new DaoAuthenticationProvider();
+    public DaoAuthenticationProvider daoAuthenticationProvider() {
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
         authenticationProvider.setPasswordEncoder(passwordEncoder());
         authenticationProvider.setUserDetailsService(userService);
         return authenticationProvider;
     }
-
-
 }
