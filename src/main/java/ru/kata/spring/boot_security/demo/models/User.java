@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "users")
@@ -86,6 +87,12 @@ public class User implements UserDetails {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+    public String getNameRoles() {
+        return roles.stream()
+                .map(role -> role.getName()
+                        .replace("ROLE_", ""))
+                .collect(Collectors.joining(" "));
     }
 
     @Override

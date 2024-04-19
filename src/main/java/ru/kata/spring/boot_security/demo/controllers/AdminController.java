@@ -22,46 +22,33 @@ public class AdminController {
         this.roleService = roleService;
     }
 
-    @GetMapping("/listUsers")
-    public String getListUsers(Model model) {
-        model.addAttribute("users", userService.showListUser());
-        return "listUsers";
-    }
 
     @GetMapping
-    public String showAdmin(Principal principal, Model model) {
-        User user = userService.findByUsername(principal.getName());
-        if (user == null) {
-            return "redirect:/login";
-        }
-        model.addAttribute("user", user);
-        return "admin";
+    public String showAdminPanel(Principal principal, Model model) {
+        model.addAttribute("user", userService.findByUsername(principal.getName()));
+        model.addAttribute("roles", roleService.findAll());
+        model.addAttribute("users", userService.showListUser());
+        model.addAttribute("newUser", new User());
+        return "index";
     }
 
-
-    @GetMapping("/{id}")
-    public String show(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("user", userService.getUserById(id));
-        return "admin";
+    @PostMapping("/new")
+    public String getAddUser(@ModelAttribute("user") User user) {
+        userService.save(user);
+        return "redirect:/admin";
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") Long id) {
         userService.removeUser(id);
-        return "redirect:/admin/listUsers";
+        return "redirect:/admin";
 
     }
 
-    @GetMapping("/edit/{id}")
-    public String edit(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("user", userService.getUserById(id));
-        model.addAttribute("roles", roleService.findAll());
-        return "edit";
-    }
 
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") User user, @PathVariable("id") Long id) {
         userService.update(user, id);
-        return "redirect:/admin/listUsers";
+        return "redirect:/admin";
     }
 }
