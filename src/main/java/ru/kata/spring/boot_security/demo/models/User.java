@@ -1,5 +1,8 @@
 package ru.kata.spring.boot_security.demo.models;
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.LazyCollection;
@@ -18,13 +21,15 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @NotEmpty(message = "Username can't be empty")
     @Column(name = "username")
     private String username;
 
     @Column(name = "password")
     private String password;
 
+    @Email
+    @NotEmpty(message = "Email can't be empty")
     @Column(name = "email")
     private String email;
 

@@ -4,6 +4,7 @@ package ru.kata.spring.boot_security.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.kata.spring.boot_security.demo.models.User;
 import ru.kata.spring.boot_security.demo.repositories.RoleRepositories;
 import ru.kata.spring.boot_security.demo.repositories.UserRepositories;
+import ru.kata.spring.boot_security.demo.util.UserNotFoundException;
 
 
 import java.util.List;
@@ -87,7 +89,12 @@ public class UserService implements UserDetailsService {
 
 
     public User getUserById(Long id) {
-        return userRepositories.findById(id).get();
+        return userRepositories.findById(id).orElseThrow(UserNotFoundException::new);
+    }
+
+
+    public User getCurrentUser() {
+        return (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
 
 }
